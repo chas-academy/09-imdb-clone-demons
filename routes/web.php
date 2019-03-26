@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/movie/{id}', function () {
-    dd('hi');
-})->name('movie');
+Route::get('/movie/{id}', ['as' => 'movie', 'uses' => 'MovieController@index']);
 
 Auth::routes();
 

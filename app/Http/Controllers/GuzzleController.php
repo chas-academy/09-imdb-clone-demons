@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class GuzzleController extends Controller
 {
-    public function get($endpoint, $query) {
+    public function get($endpoint, $query = '') {
         $api_key = env('API_KEY');
 
         $client = new Client();
