@@ -12,3 +12,6 @@ yarn-error.log
 .DS_Store
 /.idea
 /.vagrant
+/public/js
+/public/css
+/public/mix-manifest.json
