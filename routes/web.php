@@ -13,6 +13,8 @@ Route::get('/movies', 'MoviesController@searchResult')->name('movies');
 
 Route::get('/movie/{movie_id}', 'MovieController@movie')->name('movie');
 
+Route::get('/search', 'SearchController@index')->name('search');
+
 Auth::routes();
 
 Route::get('/user/{user_id}', 'UserController@user')
