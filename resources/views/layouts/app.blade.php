@@ -26,18 +26,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item container-fluid">
-                        <form class="input-group" action="{{ route('search') }}" method="GET">
-                                <input type="text" class="form-control" placeholder="Search movie" name="q" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <li class="nav-item w-100 ml-4 mr-4">
+                            <form class="input-group" action="{{ route('search') }}" method="GET">
+                                <input type="text" class="form-control" placeholder="Search for movies" name="q" aria-label="Search for movies" aria-describedby="button-addon2">
                                 <div class="input-group-append">
                                   <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                                 </div>
                             </form>
                         </li>
                     </ul>
-
-                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -74,7 +71,7 @@
             </div>
         </nav>
 
-        <main class="container">
+        <main class="container mt-4 mb-4">
             @yield('content')
         </main>
     </div>
