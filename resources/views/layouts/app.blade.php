@@ -27,7 +27,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav flex-grow-1">
 
-                        <li class="nav-item">
+                        <li class="nav-item container-fluid">
                         <form class="input-group" action="{{ route('search') }}" method="GET">
                                 <input type="text" class="form-control" placeholder="Search movie" name="q" aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <div class="input-group-append">
