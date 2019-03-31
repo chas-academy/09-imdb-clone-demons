@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item w-100 ml-4 mr-4">
+                        <li class="nav-item w-100 mt-2 mt-md-0 ml-md-3 mr-md-3">
                             <form class="input-group" action="{{ route('search') }}" method="GET">
                                 <input type="text" class="form-control" placeholder="Search for movies" name="q" aria-label="Search for movies" aria-describedby="button-addon2">
                                 <div class="input-group-append">
