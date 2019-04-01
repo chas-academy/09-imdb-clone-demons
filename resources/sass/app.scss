@@ -1,18 +1,11 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
+$grid-gutter-width: 8px !default;
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    background-color: #141d26;
+    background-color: $body-bg-color;
     color: white;
-}
-
-.poster {
-    width: 185px;
 }
