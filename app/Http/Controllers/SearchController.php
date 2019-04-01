@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-class SearchController extends GuzzleController
+use App\Services\TMDB;
+
+class SearchController extends Controller
 {
-    public function index() {
+    public function index(TMDB $tmdb) {
         $query = request()->query('q');
-        $data = parent::get('search/movie', "query={$query}&page=1");
-        return view('home', ['movies' => $data['results']]);
+        $data = $tmdb->get('search/movie', ['query' => $query, 'page' => '1']);
+        return view('movies', ['movies' => $data['results']]);
     }
 }

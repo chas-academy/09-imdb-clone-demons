@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends GuzzleController
+use App\Services\TMDB;
+
+class HomeController extends Controller
 {
-    public function index()
+    public function index(TMDB $tmdb)
     {
-        $data = parent::get('movie/popular', 'page=1');
-        return view('home', ['movies' => $data['results']]);
+        $data = $tmdb->get('movie/popular', ['page' => '1']);
+        return view('movies', ['movies' => $data['results']]);
     }
 }
