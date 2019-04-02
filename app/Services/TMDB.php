@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class TMDB
 {
-    protected $client;
+    private $client;
 
     public function __construct()
     {
