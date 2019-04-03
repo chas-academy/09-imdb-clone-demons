@@ -4,8 +4,11 @@
     @if(request()->is("search"))
         <h3>Search results for: {{request()->query('q')}}</h3>
     @endif
+    @if(request()->is("genre/*"))
+        <h2>{{$genre}}</h2>
+    @endif
     <div class="row">
-        @foreach ($movies as $movie)
+        @foreach($movies as $movie)
             <div class="col-6 col-sm-4 col-lg-3 col-xl-2 mb-2">
                 <a href="{{ route('movies.show', ['id' => $movie['id']]) }}">
                     <img class="img-fluid"
