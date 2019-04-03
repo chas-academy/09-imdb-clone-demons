@@ -6,14 +6,14 @@ use GuzzleHttp\Client;
 
 class TMDB
 {
-    protected $client;
+    private $client;
 
     public function __construct()
     {
         $this->client = new Client(['base_uri' => 'https://api.themoviedb.org/3/']);
     }
 
-    public function get($endpoint, $query)
+    public function get($endpoint, $query = [])
     {
         $API_KEY = env('API_KEY');
 
