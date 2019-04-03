@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use TMDB;
 
-class MovieController extends Controller
+class MoviesController extends Controller
 {
     public function index()
     {

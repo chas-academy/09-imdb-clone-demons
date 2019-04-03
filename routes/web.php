@@ -7,9 +7,9 @@
 |
 */
 
-Route::get('/', 'MovieController@index')->name('movie.index');
-Route::get('/movie/{movie}', 'MovieController@show')->name('movie.show');
-Route::get('/search', 'MovieController@search')->name('movie.search');
+Route::get('/', 'MoviesController@index')->name('movies.index');
+Route::get('/movie/{movie}', 'MoviesController@show')->name('movies.show');
+Route::get('/search', 'MoviesController@search')->name('movies.search');
 
 Auth::routes();
 
