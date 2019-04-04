@@ -1,11 +1,29 @@
 // Variables
 @import 'variables';
-
-$grid-gutter-width: 8px !default;
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body {
     background-color: $body-bg-color;
     color: white;
+}
+
+.poster {
+    max-width: 300px;
+}
+
+.genre {
+    font-size: 1.2rem;
+}
+
+.scroller {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.backdrop {
+    max-width: 250px;
+    max-height: 141px;
 }

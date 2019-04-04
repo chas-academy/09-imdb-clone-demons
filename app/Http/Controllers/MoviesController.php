@@ -14,13 +14,7 @@ class MoviesController extends Controller
 
     public function show($id)
     {
-        $data = TMDB::get("movie/{$id}");
+        $data = TMDB::get("movie/{$id}", ['append_to_response' => 'recommendations']);
         return view('movie', ['movie' => $data]);
-    }
-
-    public function search() {
-        $query = request()->query('q');
-        $data = TMDB::get('search/movie', ['query' => $query, 'page' => '1']);
-        return view('movies', ['movies' => $data['results']]);
     }
 }

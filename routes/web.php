@@ -9,7 +9,8 @@
 
 Route::get('/', 'MoviesController@index')->name('movies.index');
 Route::get('/movie/{movie}', 'MoviesController@show')->name('movies.show');
-Route::get('/search', 'MoviesController@search')->name('movies.search');
+
+Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/genre/{genre}', 'GenresController@show')->name('genres.show');
 
