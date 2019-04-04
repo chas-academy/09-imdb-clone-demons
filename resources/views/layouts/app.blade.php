@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -71,7 +71,7 @@
             </div>
         </nav>
 
-        <main class="container mt-4 mb-4">
+        <main class="container mt-6 mb-2">
             @yield('content')
         </main>
     </div>
