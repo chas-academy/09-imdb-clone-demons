@@ -8,7 +8,11 @@
     <h5>Overview</h5>
     <p>{{$movie['overview']}}</p>
     <h5>Runtime</h5>
-    <p>1h 24m</p>
+    @php
+        $hours = floor($movie['runtime'] / 60);
+        $minutes = $movie['runtime'] % 60;
+        echo "<p>{$hours}h {$minutes}m</p>"
+    @endphp
 
     <h5>Genres</h5>
     <ul class="list-inline">
