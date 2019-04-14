@@ -25,6 +25,9 @@
             {{-- Recommendations --}}
             @component('partials.recommendations', ['recommendations' => $movie['recommendations']['results']])
             @endcomponent
+            {{-- Reviews --}}
+            @component('partials.reviews', ['reviews' => $reviews, 'movie_id' => $movie['id']])
+            @endcomponent
         </div>
     </main>
 @endsection

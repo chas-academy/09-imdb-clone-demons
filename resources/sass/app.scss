@@ -37,7 +37,7 @@ img {
 }
 
 .title-bar {
-    //col-12 pl-3 mt-3 order-md-1
+    //col-12 order-md-1
     @include make-col-ready;
     @include make-col(12);
     padding-top: 8px;
@@ -94,7 +94,6 @@ img {
 .recommendations {
     //col-md-10 order-md-5
     @include make-col-ready;
-    @include make-col(12);
     padding: 16px 8px;
     @include media-breakpoint-up(md) {
         @include make-col(10);
@@ -113,4 +112,29 @@ img {
         max-height: 141px;
         margin-right: 8px;
     }
+}
+
+.reviews {
+    //col-md-10 order-md-6
+    @include make-col-ready;
+    padding: 0 8px;
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        order: 6;
+    }
+}
+
+.heading {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+
+    .rating {
+        margin-right: 8px;
+    }
+}
+
+.subheading {
+    margin-bottom: 16px;
+    font-size: 0.8rem;
 }
