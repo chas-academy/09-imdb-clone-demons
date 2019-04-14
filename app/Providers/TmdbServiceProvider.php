@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\TMDB;
+use App\Services\Tmdb;
 
-class TMDBServiceProvider extends ServiceProvider
+class TmdbServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class TMDBServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('tmdb', function () {
-            return new TMDB();
+            return new Tmdb();
         });
     }
 

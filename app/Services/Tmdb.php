@@ -4,7 +4,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 
-class TMDB
+class Tmdb
 {
     private $client;
 
@@ -15,7 +15,7 @@ class TMDB
 
     public function get($endpoint, $query = [])
     {
-        $API_KEY = env('API_KEY');
+        $API_KEY = config('services.tmdb.key');
 
         $promise = $this->client->getAsync($endpoint, ['query' => array_merge(['api_key' => $API_KEY], $query)])->then(function ($response) {
             $data = json_decode($response->getBody(), true);

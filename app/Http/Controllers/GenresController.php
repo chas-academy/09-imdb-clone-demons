@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use TMDB;
+use Tmdb;
 
 class GenresController extends Controller
 {
     public function show($id)
     {
-        $data = TMDB::get('discover/movie', ['with_genres' => $id, 'page' => '1']);
-        $genres = TMDB::get('genre/movie/list');
+        $data = Tmdb::get('discover/movie', ['with_genres' => $id, 'page' => '1']);
+        $genres = Tmdb::get('genre/movie/list');
 
         $genre = '';
         foreach($genres['genres'] as $key) {
