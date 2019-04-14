@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Tmdb;
 
-class GenresController extends Controller
+class GenreController extends Controller
 {
     public function show($id)
     {
