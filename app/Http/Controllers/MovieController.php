@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Movie;
 use Tmdb;
+use App\Movie;
 
 class MovieController extends Controller
 {
     public function index()
     {
-        $data = Tmdb::get('movie/popular', ['page' => '1']);
-        return view('movies.index', ['movies' => $data['results']]);
+        $query = request()->query('page');
+        $data = Tmdb::get('movie/popular', ['page' => $query]);
+        return view('movie.index', ['movies' => $data['results']]);
     }
 
     public function show($id)
     {
         $data = Tmdb::get("movie/{$id}", ['append_to_response' => 'recommendations,videos']);
         $movie = Movie::find($id);
-        $reviews = $movie ? $movie->reviews->sortByDesc('created_at') : [];
+        $reviews = $movie ? $movie->reviews->sortByDesc('created_at') : collect([]);
 
         $video_id = '';
         foreach($data['videos']['results'] as $video) {
@@ -26,6 +27,6 @@ class MovieController extends Controller
                 break;
             }
         }
-        return view('movies.show', ['movie' => $data, 'video_id' => $video_id, 'reviews' => $reviews]);
+        return view('movie.show', ['movie' => $data, 'video_id' => $video_id, 'reviews' => $reviews]);
     }
 }

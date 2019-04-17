@@ -1,6 +1,6 @@
 <section class="reviews">
     <h4>User Reviews</h4>
-    @if($reviews)
+    @if($reviews->count())
         <ul class="list-unstyled pl-2">
             @foreach($reviews as $review)
                 <li>

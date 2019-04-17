@@ -8,7 +8,8 @@ class GenreController extends Controller
 {
     public function show($id)
     {
-        $data = Tmdb::get('discover/movie', ['with_genres' => $id, 'page' => '1']);
+        $query = request()->query('page');
+        $data = Tmdb::get('discover/movie', ['with_genres' => $id, 'page' => $query]);
         $genres = Tmdb::get('genre/movie/list');
 
         $genre = '';
@@ -17,6 +18,6 @@ class GenreController extends Controller
                 $genre = $key['name'];
             }
         }
-        return view('movies', ['movies' => $data['results'], 'genre' => $genre]);
+        return view('movie.index', ['movies' => $data['results'], 'genre' => $genre]);
     }
 }

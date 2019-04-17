@@ -8,8 +8,8 @@ class SearchController extends Controller
 {
     public function index()
     {
-        $query = request()->validate(['q' => 'required']);
-        $data = Tmdb::get('search/movie', ['query' => reset($query), 'page' => '1']);
-        return view('movies', ['movies' => $data['results']]);
+        $query = request()->validate(['query' => 'required', 'page' => 'nullable']);
+        $data = Tmdb::get('search/movie', $query);
+        return view('movie.index', ['movies' => $data['results']]);
     }
 }

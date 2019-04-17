@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-secondary">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}

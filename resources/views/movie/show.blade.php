@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <main class="container mt-6">
+    <main class="container mt-5 mt-md-6">
         <div class="row">
             {{-- Trailer --}}
             <div class="embed-responsive embed-responsive-16by9 trailer">
@@ -11,13 +11,13 @@
             </div>
             {{-- Title bar --}}
             @component('partials.title_bar', ['title' => $movie['title'],
-                                                'runtime' => $movie['runtime'],
-                                                'genres' => $movie['genres'],
-                                                'release_date' => $movie['release_date']])
+                                              'runtime' => $movie['runtime'],
+                                              'genres' => $movie['genres'],
+                                              'release_date' => $movie['release_date']])
             @endcomponent
             {{-- Poster --}}
             <div class="poster">
-                <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{$movie['poster_path']}}"
+                <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{$movie['poster_path']}}"
                      alt="{{$movie['title']}}">
             </div>
             {{-- Overview --}}
