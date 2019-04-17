@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function watchlists()
+    {
+        return $this->hasMany(Watchlist::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);

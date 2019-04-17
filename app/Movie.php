@@ -10,6 +10,11 @@ class Movie extends Model
         'id', 'title', 'poster_path'
     ];
 
+    public function watchlists()
+    {
+        return $this->belongsToMany(Watchlist::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
