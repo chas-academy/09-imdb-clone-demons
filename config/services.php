@@ -47,4 +47,7 @@ return [
         'key' => env('TMDB_KEY'),
     ],
 
+    'tmdb' => [
+        'key' => env('TMDB_KEY'),
+    ],
 ];

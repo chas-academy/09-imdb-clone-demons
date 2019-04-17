@@ -1,11 +1,162 @@
 // Variables
 @import 'variables';
-
-$grid-gutter-width: 8px !default;
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body {
     background-color: $body-bg-color;
     color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.movie {
+    //col-6 col-sm-4 col-lg-3 col-xl-2
+    @include make-col-ready;
+    @include make-col(6);
+    margin-bottom: 8px;
+    animation: fade-in 2s;
+    @include media-breakpoint-up(sm) {
+        @include make-col(4);
+    }
+    @include media-breakpoint-up(lg) {
+        @include make-col(3);
+    }
+    @include media-breakpoint-up(xl) {
+        @include make-col(2);
+    }
+}
+
+.trailer {
+    //col-md-7 order-md-3
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+        @include make-col(7);
+        order: 3;
+    }
+}
+
+.poster {
+    //col-4 col-md-3 order-md-2
+    @include make-col-ready;
+    @include media-breakpoint-down(sm) {
+        @include make-col(4);
+        margin-top: 4px;
+        margin-left: 4px;
+    }
+    @include media-breakpoint-up(md) {
+        @include make-col(3);
+        order: 2;
+    }
+}
+
+.title-bar {
+    //col-12 order-md-1
+    @include make-col-ready;
+    @include make-col(12);
+    padding-top: 8px;
+    padding-left: 8px;
+    @include media-breakpoint-up(md) {
+        order: 1;
+    }
+}
+
+.subtext {
+    display: flex;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 8px;
+    }
+
+    *:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    p {
+        align-self: flex-end;
+        margin-bottom: 8px;
+        white-space: nowrap;
+    }
+
+    span {
+        color: grey;
+    }
+
+    .genres {
+        margin-bottom: 8px;
+    }
+
+    .genres > * {
+        font-size: 1.1em;
+        margin: 0;
+    }
+}
+
+.overview {
+    //col-7 col-md-9 order-md-4
+    @include make-col-ready;
+    @include make-col(7);
+    margin-top: 4px;
+    margin-left: 4px;
+    @include media-breakpoint-up(md) {
+        @include make-col(9);
+        order: 4;
+        margin-top: 8px;
+        margin-left: 24px;
+    }
+}
+
+.recommendations {
+    //col-md-10 order-md-5
+    @include make-col-ready;
+    padding: 16px 8px;
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        order: 5;
+    }
+}
+
+.scroller {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    figure {
+        display: inline-block;
+        max-width: 250px;
+        max-height: 141px;
+        margin-right: 8px;
+    }
+}
+
+.reviews {
+    //col-md-10 order-md-6
+    @include make-col-ready;
+    padding: 0 8px;
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        order: 6;
+    }
+}
+
+.heading {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+
+    .rating {
+        margin-right: 8px;
+    }
+}
+
+.subheading {
+    margin-bottom: 16px;
+    font-size: 0.8rem;
 }

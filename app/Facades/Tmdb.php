@@ -4,7 +4,7 @@ namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class TMDB extends Facade
+class Tmdb extends Facade
 {
     protected static function getFacadeAccessor()
     {
