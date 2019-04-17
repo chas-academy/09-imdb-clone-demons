@@ -9,7 +9,11 @@
                         {{$review['heading']}}
                     </h5>
                     <h6 class="subheading">{{$review['created_at']->format('d M Y')}} | by {{$review->user->name}}</h6>
-                    <p>{{$review['comment']}}</p>
+                    @if($review['comment'])
+                        <p>{{$review['comment']}}</p>
+                    @else
+                        <p><em>No comment.</em></p>
+                    @endif
                 </li>
             @endforeach
         </ul>
