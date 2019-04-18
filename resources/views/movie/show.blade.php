@@ -10,10 +10,12 @@
                         allowfullscreen="allowfullscreen"></iframe>
             </div>
             {{-- Title bar --}}
-            @component('partials.title_bar', ['title' => $movie['title'],
+            @component('partials.title_bar', ['id' => $movie['id'],
+                                              'title' => $movie['title'],
                                               'runtime' => $movie['runtime'],
                                               'genres' => $movie['genres'],
-                                              'release_date' => $movie['release_date']])
+                                              'release_date' => $movie['release_date'],
+                                              'watchlists' => $watchlists])
             @endcomponent
             {{-- Poster --}}
             <div class="poster">

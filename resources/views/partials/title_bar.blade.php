@@ -8,4 +8,6 @@
         <span class="d-none d-md-block">|</span>
         <p class="d-none d-md-block">{{$release_date}}</p>
     </div>
+    @component('partials.watchlist_dropdown', ['watchlists' => $watchlists, 'id' => $id])
+    @endcomponent
 </section>

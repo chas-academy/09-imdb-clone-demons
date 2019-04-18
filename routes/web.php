@@ -18,6 +18,7 @@ Route::group([
     'middleware' => ['auth']
 ], function() {
     Route::resource('watchlist', 'WatchlistController');
+    Route::post('movie/{movie}/watchlist', 'WatchlistMovieController@store')->name('watchlist.movie.store');
 
     Route::post('/movie/{movie}/reviews', 'ReviewController@store')->name('review.store');
 });

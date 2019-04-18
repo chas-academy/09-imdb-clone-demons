@@ -13,11 +13,7 @@
                                     <a class="text-warning" href="{{ route('watchlist.show', ['id' => $watchlist['id']]) }}">{{$watchlist['title']}}</a>
                                 </h5>
                                 <h6 class="subheading">Created at {{$watchlist['created_at']->format('d M Y')}} -
-                                    <a class="text-danger" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                document.getElementById('delete-form').submit();">
-                                        Delete
-                                    </a>
+                                    <a class="watchlist-delete text-danger" href="#">Delete</a>
                                 </h6>
                                 <form id="delete-form" action="{{ route('watchlist.destroy', ['id' => $watchlist['id']]) }}" method="POST" class="d-none">
                                     @method('DELETE')
