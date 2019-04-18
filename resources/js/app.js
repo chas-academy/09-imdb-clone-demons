@@ -14,7 +14,7 @@ $( document ).ready(function() {
             return window.location.origin + window.location.pathname + '?' + params.toString();
         },
         append: '.movie',
-        scrollThreshold: 7500
+        scrollThreshold: 800
     });
 });
 

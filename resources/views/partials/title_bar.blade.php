@@ -1,5 +1,5 @@
 <section class="title-bar">
-    <h2>{{$title}}</h2>
+    <h3>{{$title}} <small>({{substr($release_date, 0, 4)}})</small></h3>
     <div class="subtext">
         <p>{{gmdate("G\h i\m", ($runtime * 60))}}</p>
         <span>|</span>

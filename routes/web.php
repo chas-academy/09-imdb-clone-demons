@@ -14,9 +14,13 @@ Route::get('/search', 'SearchController@index')->name('search.index');
 
 Route::get('/genre/{genre}', 'GenreController@show')->name('genres.show');
 
-Route::resource('watchlist', 'WatchlistController');
+Route::group([
+    'middleware' => ['auth']
+], function() {
+    Route::resource('watchlist', 'WatchlistController');
 
-Route::post('/movie/{movie}/reviews', 'ReviewController@store')->name('review.store');
+    Route::post('/movie/{movie}/reviews', 'ReviewController@store')->name('review.store');
+});
 
 Auth::routes();
 
