@@ -113,6 +113,14 @@ img {
     }
 }
 
+.dropdown-item-checked::before {
+    position: absolute;
+    left: .4rem;
+    content: '✓';
+    font-weight: bold;
+    color: green;
+}
+
 .recommendations {
     //col-md-10 order-md-5
     @include make-col-ready;
@@ -157,6 +165,7 @@ img {
 }
 
 .subheading {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-size: 0.8rem;
 }
+

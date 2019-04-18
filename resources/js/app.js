@@ -5,16 +5,27 @@
  */
 require('./bootstrap');
 
-$( document ).ready(function() {
+$(document).ready(function() {
     const params = new URLSearchParams(window.location.search);
-
     $('.movies').infiniteScroll({
         path: function() {
             params.set('page', this.pageIndex + 1);
             return window.location.origin + window.location.pathname + '?' + params.toString();
         },
         append: '.movie',
-        scrollThreshold: 7500
+        scrollThreshold: 800
+    });
+
+    $('.watchlist-delete').on('click', function(event) {
+        event.preventDefault();
+        $('#delete-form').submit();
+    });
+
+    $('.watchlist-dropdown-item').on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).toggleClass('dropdown-item-checked');
+        $(this).parent().submit();
     });
 });
 

@@ -28,7 +28,7 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item w-100 mt-2 mt-md-0 ml-md-3 mr-md-3">
                         <form class="input-group" action="{{ route('search.index') }}" method="GET">
-                            <input type="text" class="form-control" placeholder="Search for movies..." name="q" aria-label="Search for movies" aria-describedby="button-addon2">
+                            <input type="text" class="form-control" placeholder="Search for movies..." name="query" aria-label="Search for movies" aria-describedby="button-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-warning" type="submit" id="button-addon2">Search</button>
                             </div>
@@ -54,6 +54,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('watchlist.index') }}">Watchlists</a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">

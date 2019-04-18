@@ -1,8 +1,10 @@
 
 <!-- Button trigger modal -->
+@auth
 <button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#exampleModal">
     Review this movie
 </button>
+@endauth
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,7 +28,7 @@
                         <input type="text" class="form-control" id="heading" name="heading">
                     </div>
                     <div class="form-group">
-                        <label for="comment">Comment</label>
+                        <label for="comment">Comment <span class="text-info">(optional)</span></label>
                         <textarea class="form-control" id="comment" name="comment"></textarea>
                     </div>
                 </form>
