@@ -19,7 +19,7 @@ class MovieController extends Controller
         $data = Tmdb::get("movie/{$id}", ['append_to_response' => 'recommendations,videos']);
         $movie = Movie::find($id);
         $reviews = $movie ? $movie->reviews->sortByDesc('created_at') : collect([]);
-        $watchlists = auth()->user()->watchlists->sortByDesc('created_at');
+        $watchlists = auth()->check() ? auth()->user()->watchlists->sortByDesc('created_at') : collect([]);
 
         $video_id = '';
         foreach($data['videos']['results'] as $video) {
